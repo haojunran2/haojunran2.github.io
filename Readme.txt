@@ -213,7 +213,40 @@ git merge fix_bugs
 这时编辑报冲突的文件index.js，将<<<<<<<========>>>>>>>>之间的代码，改为你希望保留的内容
 再次加入暂存区，再次提交即可！
 
+-------------------------------------------------------------------------------------------------------
 
+远程仓库的使用
+github
+gitee
+
+我们需要将远程仓库的地址在本地仓库关联，然后将本地仓库的分支上传到远程仓库！
+
+在本地仓库可以关联任意多的远程仓库地址！
+git remote add wbs19032 https://github.com/yufeng2/wbs19032.git
+git remote add myhomepage https://github.com/yufeng2/myhomepage.git
+
+查看本地仓库关联的远程地址
+git remote -v
+git remote --verbose
+
+删除本地仓库关联的远程地址
+git remote rm myhomepage
+
+修改远程仓库地址在本地仓管的关联名称
+git remote rename wbs19032 itany19032
+
+上传本地分支（push是一个合并的过程，既然是合并就会有冲突）
+git push itany19032 new_feature
+git push itany19032 master:main         -- 上传本地分支master到远程的main分支（如果远程没有main相当于重命名，如果远程有main就是合并）
+
+所有需要同步到远程的内容，都必须要先加入本地仓库，然后再push同步到远程！
+
+下载远程分支到本地（pull是一个合并的过程，既然是合并就会有冲突）
+git pull itany19032 fix_bugs            -- 将远程分支fix_bugs合并到当前本地分支
+如果你是要下载到本地（通过:fix_bugs重命名到本地）
+git pull itany19032 fix_bugs:fix_bugs
+
+如果push产生冲突，那么必须要先pull到本地，然后在本地解决冲突，然后再次提交本本地，最后再次push！
 
 
 
