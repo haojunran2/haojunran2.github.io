@@ -262,6 +262,16 @@ git push itany19032 -d new_feature
 
 ---------------------------------------------------------------------------------------------------------
 
+使用github作为服务器发布个人静态站点（htm, css, js）
+不支持php, jsp, asp等服务器脚本语言
+
+1、将自己的项目内容上传到远程仓库的gh-pages分支
+https://yufeng2.github.io/wbs19032/switcher.html
+
+2、将远程仓库名设定为yufeng2.github.io，将自己的项目内容上传到远程仓库的master分支
+git remote add mywebsite https://github.com/yufeng2/yufeng2.github.io.git
+git push mywebsite gh-pages:master
+https://yufeng2.github.io
 
 
 
